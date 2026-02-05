@@ -77,9 +77,6 @@
     h3{margin:0 0 6px}
     .muted{color:var(--muted);line-height:1.55}
 
-    /* Hide the build tag if empty to avoid extra whitespace */
-    #buildTag:empty{display:none}
-
     .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
 
     .btn{
@@ -180,6 +177,9 @@
       nav{justify-content:center}
       header{flex-direction:column;align-items:flex-start}
     }
+
+    .buildTag{font-weight:900;margin-top:10px;min-height:0}
+    .buildTag:empty{display:none}
     @media (max-width:560px){
       h1{font-size:36px;line-height:1.08}
       .ctaRow{flex-direction:column}
@@ -212,7 +212,7 @@
         <button class="btn primary" type="button" id="scrollQuoteBtn">Get Instant Quote</button>
         <button class="btn ghost" type="button" id="scrollProviderBtn">Become a Provider</button>
       </div>
-      <div class="muted" style="font-weight:900;margin-top:10px" id="buildTag"></div>
+      <div class="muted buildTag" id="buildTag"></div>
 
       <div class="badges">
         <div class="badge">60-second estimate</div>
@@ -220,9 +220,7 @@
         <div class="badge">Local matching</div>
         <div class="badge">No bank info</div>
       </div>
-      <p class="muted" style="margin:12px 0 0;font-weight:800">
-        No bank info needed — get a range first, then decide if you want to share your contact details for matching.
-      </p>
+      <p class="muted" style="margin:10px 0 0 0">No bank info needed - get a range first, then decide.</p>
     </section>
 
     <section class="card heroRight" id="quote">
@@ -256,7 +254,19 @@
           <select id="service"></select>
         </div>
 
-        <div class="row2">
+        
+        <div id="roomsWrap" class="hidden">
+          <label for="rooms">Rooms</label>
+          <select id="rooms">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="4+">4+</option>
+          </select>
+        </div>
+
+<div class="row2">
           <div>
             <label for="stories">Stories / access</label>
             <select id="stories">
@@ -275,17 +285,6 @@
               <option value="heavy (major repairs)">Heavy (major repairs)</option>
             </select>
           </div>
-        </div>
-
-        <div id="roomsWrap" class="hidden">
-          <label for="rooms">Rooms</label>
-          <select id="rooms">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="4+">4+</option>
-          </select>
         </div>
 
         <div id="sizeWrap">
@@ -449,9 +448,9 @@
   <input type="text" name="zip" />
   <input type="text" name="category" />
   <input type="text" name="serviceType" />
-  <input type="text" name="stories" />
+    <input type="text" name="rooms" />
+<input type="text" name="stories" />
   <input type="text" name="prep" />
-  <input type="text" name="rooms" />
   <input type="text" name="size" />
   <input type="text" name="paintingScope" />
   <input type="text" name="flooringMaterial" />
@@ -613,9 +612,6 @@
   }
 
   function refreshConditionalFields(){
-    var roomsWrap = $("roomsWrap");
-    if(roomsWrap) roomsWrap.classList.toggle("hidden", activeCategory !== "cleaning");
-
     var paintWrap = $("paintingScopeWrap");
     if(paintWrap) paintWrap.classList.toggle("hidden", !isPaintingSubtype());
 
@@ -636,6 +632,10 @@
         sizeInput.placeholder = "e.g. 500";
       }
     }
+
+    var roomsWrap = $("roomsWrap");
+    if(roomsWrap) roomsWrap.classList.toggle("hidden", activeCategory !== "cleaning");
+
 
     refreshPetOptions();
   }
@@ -680,9 +680,9 @@
     var subtype = $("service").value;
     var stories = $("stories").value;
     var prep = $("prep").value;
-    var rooms = String(($("rooms") && $("rooms").value) || "").trim();
     var needWhen = $("needWhen").value;
     var serviceLevel = $("serviceLevel").value;
+    var rooms = $("rooms") ? $("rooms").value : "1";
     var paintingScope = $("paintingScope").value;
     var flooringMaterial = $("flooringMaterial").value;
     var notes = $("notes").value.trim();
@@ -731,14 +731,13 @@
     } else {
       low = size * 1.5;
       high = size * 3.5;
-    }
 
-    // Rooms multiplier (used for Cleaning only)
-    if(activeCategory === "cleaning"){
-      var rMultMap = { "1": 1.00, "2": 1.12, "3": 1.26, "4": 1.40, "4+": 1.55 };
-      var rm = rMultMap[rooms] || 1.00;
-      low *= rm;
-      high *= rm;
+      if(activeCategory === "cleaning"){
+        var rm = String(rooms || "1");
+        var roomMult = (rm === "1") ? 1.00 : (rm === "2" ? 1.15 : (rm === "3" ? 1.30 : (rm === "4" ? 1.45 : 1.65)));
+        low *= roomMult;
+        high *= roomMult;
+      }
     }
 
     var svcMult = { cleaning: 1.0, pet: 1.0, remodel: 1.25, plumbing: 1.15, hvac: 1.4 };
@@ -795,9 +794,9 @@
       subtype: subtype,
       stories: stories,
       prep: prep,
-      rooms: (activeCategory === "cleaning") ? rooms : "",
       needWhen: needWhen,
       serviceLevel: serviceLevel,
+      rooms: rooms,
       paintingScope: isPaintingSubtype() ? paintingScope : "",
       flooringMaterial: isFlooringSubtype() ? flooringMaterial : "",
       petOption: activeCategory === "pet" ? $("petOption").value : "",
@@ -896,7 +895,6 @@
   safeAdd($("zip"), "input", hideQuote);
   safeAdd($("stories"), "change", hideQuote);
   safeAdd($("prep"), "change", hideQuote);
-  safeAdd($("rooms"), "change", hideQuote);
   safeAdd($("needWhen"), "change", hideQuote);
   safeAdd($("serviceLevel"), "change", hideQuote);
   safeAdd($("size"), "input", hideQuote);
@@ -990,6 +988,17 @@
   });
 
   safeAdd($("providerApplyBtn"), "click", providerApply);
+
+  // Download current page as HTML file
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "index.html";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
 
   // Init
   refreshMailLinks();
