@@ -1,847 +1,839 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PriceFirstNow - Instant Price Ranges</title>
+  <meta name="description" content="Instant local price ranges for cleaning, remodeling, plumbing, HVAC, and pet care in Broward & Palm Beach." />
+
+  <style>
+    :root{
+      --bg:#070b34;
+      --text:#ffffff;
+      --muted:#c7d2fe;
+      --border:rgba(255,255,255,.16);
+      --shadow:0 22px 70px rgba(0,0,0,.45);
+      --accent:#22d3ee;
+      --accent2:#a78bfa;
+      --accent3:#34d399;
+      --ink:#031018;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 650px at 10% -10%, rgba(34,211,238,.35), transparent),
+        radial-gradient(900px 650px at 90% 0%, rgba(167,139,250,.35), transparent),
+        radial-gradient(900px 650px at 70% 120%, rgba(52,211,153,.22), transparent),
+        var(--bg);
+      min-height:100vh;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .container{max-width:1180px;margin:0 auto;padding:22px}
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:8px 0 18px;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}
+    .mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+    .brandName{font-size:18px}
+
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{font-weight:800;opacity:.9}
+    nav a:hover{opacity:1;text-decoration:underline}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .heroLeft{padding:30px}
+    .heroRight{padding:20px}
+
+    h1{margin:0 0 12px;font-size:46px;line-height:1.05}
+    h2{margin:0 0 10px;font-size:22px}
+    h3{margin:0 0 6px}
+    .muted{color:var(--muted);line-height:1.55}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+    .btn{
+      padding:12px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.18);
+      font-weight:900;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:rgba(255,255,255,.10);
+      color:var(--text);
+      transition:transform .12s ease, opacity .12s ease;
+      user-select:none;
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent3));
+      border:0;
+      color:var(--ink);
+    }
+
+    .btn.ghost{background:rgba(255,255,255,.10)}
+
+    .btn:hover{transform:translateY(-1px);opacity:1}
+
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .badge{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .tab{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.10);
+      cursor:pointer;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--ink);border:0}
+
+    form{display:grid;gap:10px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+    label{font-size:12px;font-weight:900;color:var(--muted)}
+
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.22);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{border-color:rgba(34,211,238,.55)}
+
+    textarea{min-height:86px;resize:vertical}
+
+    .quoteBox{
+      margin-top:12px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.30);
+    }
+    .quoteAmt{font-size:26px;font-weight:1000;letter-spacing:.2px}
+    .fine{color:var(--muted);font-size:13px;line-height:1.55;margin:0}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .mini{padding:16px}
+    .mini p{margin:0;color:var(--muted);line-height:1.55}
+
+    section{padding:20px;margin-top:18px;scroll-margin-top:90px}
+
+    footer{margin:28px 0 8px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+    .hidden{display:none !important;}
+
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      h1{font-size:34px}
+      .heroLeft{padding:22px}
+      .heroRight{padding:16px}
+      .row2{grid-template-columns:1fr}
+      .btn{width:100%}
+      nav{justify-content:center}
+      header{flex-direction:column;align-items:flex-start}
+    }
+    @media (max-width:560px){
+      h1{font-size:36px;line-height:1.08}
+      .ctaRow{flex-direction:column}
+      .grid3{grid-template-columns:1fr}
+    }
   </style>
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;PriceFirstNow - Instant Price Ranges&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Instant price ranges for cleaning, pet care, remodeling, plumbing, and HVAC in Broward &amp; Palm Beach." /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg:#070b34;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text:#ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--muted:#c7d2fe;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--border:rgba(255,255,255,.16);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--shadow:0 22px 70px rgba(0,0,0,.45);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent:#22d3ee;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent2:#a78bfa;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent3:#34d399;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--ink:#031018;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--radius:22px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color:var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 650px at 10% -10%, rgba(34,211,238,.35), transparent),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 650px at 90% 0%, rgba(167,139,250,.35), transparent),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 650px at 70% 120%, rgba(52,211,153,.22), transparent),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var(--bg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height:100vh;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>a{color:inherit;text-decoration:none}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.container{max-width:1180px;margin:0 auto;padding:22px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>header{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap:16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding:8px 0 18px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brandName{font-size:18px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav{display:flex;gap:14px;flex-wrap:wrap}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav a{font-weight:800;opacity:.9}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav a:hover{opacity:1;text-decoration:underline}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius:var(--radius);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow:var(--shadow);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns:1.1fr .9fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap:18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:stretch;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.heroLeft{padding:30px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.heroRight{padding:20px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1{margin:0 0 12px;font-size:46px;line-height:1.05}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h2{margin:0 0 10px;font-size:22px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h3{margin:0 0 6px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.muted{color:var(--muted);line-height:1.55}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding:12px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius:16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.18);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight:900;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor:pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap:10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.10);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color:var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition:transform .12s ease, opacity .12s ease;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>user-select:none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn.primary{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(135deg,var(--accent),var(--accent3));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border:0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color:var(--ink);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn.ghost{background:rgba(255,255,255,.10)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{transform:translateY(-1px);opacity:1}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.badge{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding:10px 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius:999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.18);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight:900;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size:13px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:960px){ .hero{grid-template-columns:1fr} }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:640px){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>h1{font-size:34px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.heroLeft{padding:22px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.heroRight{padding:16px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>nav{justify-content:center}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>header{flex-direction:column;align-items:flex-start}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.ctaRow{flex-direction:column}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;div class="container"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HEADER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="brand"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="mark"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brandName"&gt;PriceFirstNow&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#quote"&gt;Get Quote&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#how"&gt;How it works&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#providers"&gt;Providers&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#contact"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HERO SECTION --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card heroLeft"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;See the price first.&lt;br /&gt;Then choose your provider.&lt;/h1&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="muted"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Transparent price ranges for home services in Broward &amp; Palm Beach County.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>No calls. No pressure.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ctaRow"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" id="scrollQuoteBtn"&gt;Get Instant Quote&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn ghost" id="scrollProviderBtn"&gt;Become a Provider&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Info banner to fill empty space --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:20px;padding:14px;border:1px solid rgba(255,255,255,.25);</p>
-<p class="p1"><span class="Apple-converted-space">                  </span>border-radius:14px;background:rgba(0,0,0,.18)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="muted" style="margin:0;font-weight:700"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>No bank info required. No account needed. Your quote is 100% anonymous.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="badges"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;60-second estimate&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;Local pricing&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;Real providers&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;No commitments&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- QUOTE PANEL START --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card heroRight" id="quote"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tabs" aria-label="Services"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab active" data-svc="cleaning"&gt;Cleaning&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="pet"&gt;Pet Care&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="remodel"&gt;Remodeling&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="plumbing"&gt;Plumbing&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="hvac"&gt;HVAC&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Instant Price Estimate&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;form id="quoteForm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="county"&gt;County&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="county" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="broward" selected&gt;Broward&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="palmbeach"&gt;Palm Beach&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="zip"&gt;ZIP Code&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="zip" inputmode="numeric" maxlength="5" placeholder="33063" required /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SERVICE TYPE --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="service"&gt;Service type&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="service"&gt;&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- CLEANING SPECIFIC --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="cleaningBedroomsWrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="cleanBedrooms"&gt;Bedrooms&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="cleanBedrooms"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="1" selected&gt;1 Bedroom&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="2"&gt;2 Bedrooms&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="3"&gt;3 Bedrooms&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="4"&gt;4+ Bedrooms&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="cleaningScopeWrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="cleanScope"&gt;Cleaning type&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="cleanScope"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="standard" selected&gt;Standard Cleaning&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="deep"&gt;Deep Cleaning&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="move"&gt;Move In / Move Out&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SIZE FIELD --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="sizeWrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label id="sizeLabel" for="size"&gt;Area / size (sq ft)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;input id="size" inputmode="numeric" placeholder="e.g. 500" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PAINTING SUBTYPES --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="paintingScopeWrap" class="hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="paintingScope"&gt;If painting: scope&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="paintingScope"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Walls only"&gt;Walls only&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Walls + ceilings"&gt;Walls + ceilings&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Ceilings only"&gt;Ceilings only&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Trim / doors"&gt;Trim / doors&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Full repaint"&gt;Full repaint&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- FLOORING MATERIAL --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="flooringMaterialWrap" class="hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="flooringMaterial"&gt;Flooring material&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="flooringMaterial"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Tile"&gt;Tile&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Wood"&gt;Wood&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Natural stone"&gt;Natural stone&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Laminate"&gt;Laminate&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Carpet"&gt;Carpet&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PET CARE OPTIONS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="petOptionsWrap" class="hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="petOption"&gt;Pet service option&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;select id="petOption"&gt;&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="petCount"&gt;Number of pets&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;select id="petCount"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="1" selected&gt;1&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="2"&gt;2&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="3"&gt;3&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="4"&gt;4+&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ADDITIONAL QUESTIONS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="stories"&gt;Stories / access&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="stories"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="1-story / easy access"&gt;1-story / easy access&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="2-story"&gt;2-story&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="3+ stories or condo"&gt;3+ stories or condo&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="difficult access"&gt;Difficult access&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="prep"&gt;Prep / repairs needed&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="prep"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="none"&gt;None&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="light (minor patching)"&gt;Light repairs&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="medium (repairs)"&gt;Medium repairs&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="heavy (major repairs)"&gt;Heavy repairs&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="notes"&gt;Notes (optional)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea id="notes" placeholder="Condo rules, access, material supplied…"&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="needWhen"&gt;When do you need it?&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="needWhen"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Flexible"&gt;Flexible&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="ASAP"&gt;ASAP&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Within 1 week"&gt;Within 1 week&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Within 2-4 weeks"&gt;Within 2–4 weeks&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="1-2 months"&gt;1–2 months&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="serviceLevel"&gt;Service level&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="serviceLevel"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Standard" selected&gt;Standard&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Budget"&gt;Budget&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Premium"&gt;Premium&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Luxury"&gt;Luxury&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" id="showBtn" type="button" style="width:100%;margin-top:8px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Show Price Range</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- QUOTE RESULT BOX --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="quoteBox" class="quoteBox" style="display:none;margin-top:14px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="result" class="quoteAmt"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="fine"&gt;Your estimate is based on local averages.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="typical" class="fine"&gt;&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row2" style="margin-top:14px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="leadName"&gt;Your name&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="leadName" autocomplete="name" placeholder="John" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="leadPhone"&gt;Phone&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="leadPhone" autocomplete="tel" placeholder="(954) 555-1234" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:12px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="leadEmail"&gt;Email (required)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="leadEmail" type="email" autocomplete="email" placeholder="you@email.com" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="matchBtn" class="btn ghost" type="button" style="margin-top:14px;width:100%"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Get Matched</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="matchStatus" class="fine" style="margin-top:10px"&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HOW IT WORKS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="grid3" id="how" style="margin-top:28px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card mini"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;1) Answer a few questions&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;We estimate based on service type and local market ranges.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card mini"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;2) Get a price range instantly&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Transparent price ranges help you avoid surprises and reduce wasted calls.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card mini"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;3) Get matched with providers&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;We route your request to real local providers who can take your job.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- PROVIDER SIGNUP --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="providers" class="card" style="margin-top:30px;padding:22px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Become a Provider&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="muted"&gt;Get price-aware, pre-qualified local leads. <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>No monthly fee during launch.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="pname"&gt;Name&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="pname" autocomplete="name" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="pcompany" style="margin-top:10px"&gt;Company&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="pcompany" autocomplete="organization" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="pemail" style="margin-top:10px"&gt;Email&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="pemail" type="email" autocomplete="email" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="providerApplyBtn" class="btn primary" type="button" style="margin-top:16px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Send Application</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="fine" style="margin-top:12px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>This MVP sends provider applications to your admin email automatically.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CONTACT --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="contact" class="card" style="margin-top:30px;padding:22px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="muted"&gt;Questions or early access?&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a id="contactLink" class="btn ghost" href="#"&gt;Email Us&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="fine" style="margin-top:12px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Receiving emails at: &lt;strong id="adminEmailText"&gt;&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="fine" style="margin-top:10px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Tip: Use the footer below to change the admin email anytime.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FOOTER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer style="margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;color:var(--muted);font-size:13px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;&amp;copy; &lt;span id="year"&gt;&lt;/span&gt; PriceFirstNow&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#" id="setEmailLink" style="color:var(--muted);text-decoration:underline"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Set admin email</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt; &lt;!-- close .container --&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- NETLIFY HIDDEN FORM (REQUIRED for Get Matched to work!) --&gt;</p>
-<p class="p1">&lt;form name="lead" id="netlifyLeadForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="hidden" name="form-name" value="lead" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="hidden"&gt;&lt;label&gt;Do not fill this out: &lt;input name="bot-field" /&gt;&lt;/label&gt;&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Lead details --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="leadName" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="leadPhone" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="email" name="leadEmail" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Job details --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="county" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="zip" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="category" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="serviceType" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Cleaning --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="cleanBedrooms" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="cleanScope" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Remodel fields --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="stories" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="prep" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="size" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="paintingScope" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="flooringMaterial" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Pet care fields --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="petOption" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="petCount" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="needWhen" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="serviceLevel" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="estimateLow" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="estimateHigh" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;textarea name="notes"&gt;&lt;/textarea&gt;</p>
-<p class="p1">&lt;/form&gt;</p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">(function(){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Default admin email</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var DEFAULT_ADMIN_EMAIL = "pricefirstnow@gmail.com";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var ADMIN_EMAIL = localStorage.getItem("PFN_ADMIN_EMAIL") || DEFAULT_ADMIN_EMAIL;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function $(id){ return document.getElementById(id); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function money(n){ return "$" + Math.round(n).toLocaleString(); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function validateZip(v){ return /^[0-9]{5}$/.test(v); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// SERVICE LIST</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var SERVICE_LIST = {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cleaning: ["Standard Home Cleaning", "Deep Cleaning", "Move In/Out"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>pet: ["Walking", "Sitting", "Wash and Haircut"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>remodel: ["Interior Painting", "Exterior Painting", "Flooring", "Drywall", "Windows and Doors", "Carpentry", "Other"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>plumbing: ["New Construction or Remodel", "Leak Detection", "Water Supply System", "Drain-Waste-Vent (DWV)", "Water Heaters", "Disposal Replacement", "Other"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hvac: ["Complete System Installation", "Ductwork", "Duct Cleaning", "Service and Repairs", "Preventive Maintenance", "Indoor Air Quality", "Controls and Energy Efficiency", "Commercial or Condo Work"]</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// PET OPTIONS (flat prices)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var PET_OPTIONS = {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>Walking: [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"30-min walk (small)", low:22, high:40 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"30-min walk (medium)", low:25, high:45 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"30-min walk (large)", low:30, high:55 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"60-min walk (small)", low:38, high:65 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"60-min walk (medium)", low:42, high:75 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"60-min walk (large)", low:50, high:90 }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>Sitting: [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Drop-in visit (small)", low:28, high:50 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Drop-in visit (medium)", low:32, high:60 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Drop-in visit (large)", low:38, high:70 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Overnight (small)", low:85, high:150 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Overnight (medium)", low:95, high:170 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Overnight (large)", low:110, high:200 }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"Wash and Haircut": [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Small pet", low:70, high:120 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Medium pet", low:90, high:160 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Large pet", low:120, high:220 }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>]</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>var activeCategory = "cleaning";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -----------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// POPULATE SERVICE DROPDOWN</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -----------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function setCategory(cat){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>activeCategory = cat;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll(".tab").forEach(function(btn){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>btn.classList.toggle("active", btn.dataset.svc === cat);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var sel = $("service");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>sel.innerHTML = "";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>SERVICE_LIST[cat].forEach(function(s){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var o = document.createElement("option");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>o.value = s;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>o.textContent = s;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>sel.appendChild(o);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>refreshConditionalFields();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hideQuote();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// FIELD VISIBILITY</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function refreshConditionalFields(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var isCleaning = (activeCategory === "cleaning");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var isPet = (activeCategory === "pet");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var subtype = $("service").value;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// cleaning-specific</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("cleaningBedroomsWrap").style.display = isCleaning ? "block" : "none";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("cleaningScopeWrap").style.display = isCleaning ? "block" : "none";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// pet</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("petOptionsWrap").style.display = isPet ? "block" : "none";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// size field hidden for pet</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("sizeWrap").style.display = isPet ? "none" : "block";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// painting</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("paintingScopeWrap").style.display = (/painting/i).test(subtype) ? "block" : "none";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// flooring</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("flooringMaterialWrap").style.display = (subtype === "Flooring") ? "block" : "none";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// disposal replacement</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(subtype === "Disposal Replacement"){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>$("sizeLabel").textContent = "Quantity";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>$("size").placeholder = "1";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>$("sizeLabel").textContent = "Area / size (sq ft)";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>$("size").placeholder = "500";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>refreshPetDropdown();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function refreshPetDropdown(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var subtype = $("service").value;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var wrap = $("petOptionsWrap");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(activeCategory !== "pet"){ return; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var select = $("petOption");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>select.innerHTML = "";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>(PET_OPTIONS[subtype] || []).forEach(function(opt){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var o = document.createElement("option");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>o.textContent = opt.label;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>o.value = opt.label;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>select.appendChild(o);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function hideQuote(){ $("quoteBox").style.display = "none"; $("matchStatus").textContent = ""; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// PRICE CALCULATION</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function calculate(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var zip = $("zip").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!validateZip(zip)){ alert("Please enter a valid ZIP code."); return null; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var category = activeCategory;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var subtype = $("service").value;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var size = Number($("size").value) || 0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var low = 0, high = 0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// CLEANING LOGIC</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(category === "cleaning"){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var beds = Number($("cleanBedrooms").value);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var type = $("cleanScope").value;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>var base = {1:90, 2:120, 3:150, 4:190}[beds] || 120;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var deepMult = type === "deep" ? 1.45 : 1.0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var moveMult = type === "move" ? 1.75 : 1.0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>var mult = deepMult * moveMult;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>low = base * mult;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>high = base * mult * 1.35;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// PET CARE</p>
-<p class="p1"><span class="Apple-converted-space">    </span>else if(category === "pet"){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var opt = $("petOption").value;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var count = Number($("petCount").value);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(count &gt; 4) count = 4;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>var list = PET_OPTIONS[subtype];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var found = list ? list.find(o =&gt; o.label === opt) : null;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(found){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var mult = {1:1.0, 2:1.35, 3:1.6, 4:1.8}[count];</p>
-<p class="p1"><span class="Apple-converted-space">        </span>low = found.low * mult;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>high = found.high * mult;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>low = 30;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>high = 60;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// DISPOSAL REPLACEMENT</p>
-<p class="p1"><span class="Apple-converted-space">    </span>else if(subtype === "Disposal Replacement"){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var qty = size &lt; 1 ? 1 : size;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>low = qty * 250;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>high = qty * 650;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// REMODEL / PLUMBING / HVAC general formula</p>
-<p class="p1"><span class="Apple-converted-space">    </span>else {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(size &lt; 1){ alert("Please enter size."); return null; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>low = size * 1.5;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>high = size * 3.6;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>// flooring material</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(subtype === "Flooring"){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var m = {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>"Tile":1.0, "Wood":1.12, "Natural stone":1.35, "Laminate":0.85, "Carpet":0.8</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}[$("flooringMaterial").value] || 1.0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>low *= m;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>high *= m;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// SERVICE LEVEL MULTIPLIERS</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var lvl = $("serviceLevel").value;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var lvlMult = {Budget:0.92, Standard:1.0, Premium:1.12, Luxury:1.25}[lvl] || 1.0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>low *= lvlMult; high *= lvlMult;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// CONFIDENCE BAND</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var adjLow = low * 1.05;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var adjHigh = high * 0.8;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>return {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>low: adjLow,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>high: adjHigh,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>category,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>subtype,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>zip,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>size,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cleanBedrooms: $("cleanBedrooms").value,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cleanScope: $("cleanScope").value,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>notes: $("notes").value,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>serviceLevel: lvl</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// SHOW PRICE RANGE</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("showBtn").onclick = function(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var r = calculate();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!r) return;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("result").textContent = money(r.low) + " – " + money(r.high);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var midLow = r.low + (r.high - r.low) * 0.35;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var midHigh = r.low + (r.high - r.low) * 0.65;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("typical").textContent = "Most similar jobs fall around " +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>money(midLow) + " – " + money(midHigh);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("quoteBox").style.display = "block";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// GET MATCHED (Netlify submit)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("matchBtn").onclick = function(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var r = calculate();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!r) return;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var name = $("leadName").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var phone = $("leadPhone").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var email = $("leadEmail").value.trim();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!name){ alert("Enter your name."); return; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!phone){ alert("Enter phone."); return; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!email || !email.includes("@")){ alert("Enter valid email."); return; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Populate hidden Netlify form</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var f = $("netlifyLeadForm");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.leadName.value = name;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.leadPhone.value = phone;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.leadEmail.value = email;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.category.value = r.category;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.serviceType.value = r.subtype;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.zip.value = r.zip;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.size.value = r.size;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.cleanBedrooms.value = r.cleanBedrooms;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.cleanScope.value = r.cleanScope;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.notes.value = r.notes;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.estimateLow.value = Math.round(r.low);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>f.estimateHigh.value = Math.round(r.high);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("matchStatus").textContent = "Sending...";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Submit</p>
-<p class="p1"><span class="Apple-converted-space">    </span>fetch("/", {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>method:"POST",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>body:new FormData(f)</p>
-<p class="p1"><span class="Apple-converted-space">    </span>})</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.then(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>$("matchStatus").textContent = "Submitted! A provider will contact you.";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>})</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.catch(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>$("matchStatus").textContent = "Error sending. Sending fallback email...";</p>
-<p class="p1"><span class="Apple-converted-space">        </span>window.location.href =</p>
-<p class="p1"><span class="Apple-converted-space">          </span>"mailto:" + ADMIN_EMAIL +</p>
-<p class="p1"><span class="Apple-converted-space">          </span>"?subject=Lead Request" +</p>
-<p class="p1"><span class="Apple-converted-space">          </span>"&amp;body=" + encodeURIComponent(JSON.stringify(r, null, 2));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// PROVIDER APPLY</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("providerApplyBtn").onclick = function(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var name = $("pname").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var company = $("pcompany").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var email = $("pemail").value.trim();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!name || !email){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>alert("Name and email required.");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>var body =</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Provider Application\n" +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Name: " + name + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Company: " + company + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Email: " + email + "\n";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.location.href =</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"mailto:" + ADMIN_EMAIL +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"?subject=Provider Application" +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"&amp;body=" + encodeURIComponent(body);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// CONTACT → EMAIL US</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("contactLink").onclick = function(e){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.location.href =</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"mailto:" + ADMIN_EMAIL +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"?subject=General Inquiry";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// ADMIN EMAIL CHANGE</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("setEmailLink").onclick = function(e){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var next = prompt("Enter admin email:", ADMIN_EMAIL);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!next) return;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>ADMIN_EMAIL = next.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>localStorage.setItem("PFN_ADMIN_EMAIL", ADMIN_EMAIL);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("adminEmailText").textContent = ADMIN_EMAIL;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// SCROLL BUTTONS</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("scrollQuoteBtn").onclick = function(){ location.hash = "#quote"; };</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("scrollProviderBtn").onclick = function(){ location.hash = "#providers"; };</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// INIT</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("adminEmailText").textContent = ADMIN_EMAIL;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("year").textContent = new Date().getFullYear();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Tab listeners</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll(".tab").forEach(function(btn){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>btn.onclick = function(){ setCategory(btn.dataset.svc); };</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>setCategory("cleaning");</p>
-<p class="p1">})();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-</body>
-</html>
+<div class="container">
+
+  <header>
+    <div class="brand">
+      <div class="mark"></div>
+      <div class="brandName">PriceFirstNow</div>
+    </div>
+
+    <nav>
+      <a href="#quote">Get Quote</a>
+      <a href="#how">How it works</a>
+      <a href="#providers">Providers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <section class="card heroLeft">
+      <h1>See the price first.<br>Then choose your provider.</h1>
+      <p class="muted">Instant price ranges for home services in Broward and Palm Beach County. No calls. No pressure.</p>
+
+      <div class="ctaRow">
+        <button class="btn primary" id="scrollQuoteBtn">Get Instant Quote</button>
+        <button class="btn ghost" id="scrollProviderBtn">Become a Provider</button>
+      </div>
+
+      <div class="ctaRow" style="margin-bottom:12px">
+        <!-- Removed DOWNLOAD HTML button -->
+      </div>
+
+      <div class="badges">
+        <div class="badge">60-second estimate</div>
+        <div class="badge">Price-aware clients</div>
+        <div class="badge">Local matching</div>
+        <div class="badge">No bank info</div>
+      </div>
+    </section>
+    <section class="card heroRight" id="quote">
+
+      <div class="tabs">
+        <button class="tab active" data-svc="cleaning">Cleaning</button>
+        <button class="tab" data-svc="pet">Pet Care</button>
+        <button class="tab" data-svc="remodel">Remodeling</button>
+        <button class="tab" data-svc="plumbing">Plumbing</button>
+        <button class="tab" data-svc="hvac">HVAC</button>
+      </div>
+
+      <h2>Instant Price Estimate</h2>
+
+      <form id="quoteForm" autocomplete="on">
+
+        <div class="row2">
+          <div>
+            <label for="county">County</label>
+            <select id="county">
+              <option value="broward" selected>Broward</option>
+              <option value="palmbeach">Palm Beach</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="zip">ZIP Code</label>
+            <input id="zip" inputmode="numeric" maxlength="5" placeholder="33063" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="service">Service type</label>
+          <select id="service"></select>
+        </div>
+
+        <!-- CLEANING — bedroom count instead of sq ft -->
+        <div id="bedroomWrap" class="">
+          <label for="bedrooms">Bedrooms</label>
+          <select id="bedrooms">
+            <option value="1" selected>1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+
+        <!-- SIZE — hidden if cleaning selected -->
+        <div id="sizeWrap">
+          <label for="size" id="sizeLabel">Area / size (sq ft)</label>
+          <input id="size" inputmode="numeric" placeholder="e.g. 500" />
+        </div>
+
+        <!-- Painting conditional -->
+        <div id="paintingScopeWrap" class="hidden">
+          <label for="paintingScope">If painting: scope</label>
+          <select id="paintingScope">
+            <option value="Walls only" selected>Walls only</option>
+            <option value="Walls + ceilings">Walls + ceilings</option>
+            <option value="Ceilings only">Ceilings only</option>
+            <option value="Trim / doors">Trim / doors</option>
+            <option value="Full repaint">Full repaint</option>
+          </select>
+        </div>
+
+        <!-- Flooring conditional -->
+        <div id="flooringMaterialWrap" class="hidden">
+          <label for="flooringMaterial">Flooring material</label>
+          <select id="flooringMaterial">
+            <option value="Tile" selected>Tile</option>
+            <option value="Wood">Wood</option>
+            <option value="Natural stone">Natural stone</option>
+            <option value="Laminate">Laminate</option>
+            <option value="Carpet">Carpet</option>
+          </select>
+        </div>
+
+        <!-- Pet care -->
+        <div id="petOptionsWrap" class="hidden">
+          <div class="row2">
+            <div>
+              <label for="petOption">Pet service option</label>
+              <select id="petOption"></select>
+            </div>
+
+            <div>
+              <label for="petCount">Pet count</label>
+              <select id="petCount">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" placeholder="e.g., condo rules, access, materials already purchased..."></textarea>
+        </div>
+
+        <div class="row2">
+          <div>
+            <label for="needWhen">When do you need it?</label>
+            <select id="needWhen">
+              <option value="Flexible" selected>Flexible</option>
+              <option value="ASAP">ASAP</option>
+              <option value="Within 1 week">Within 1 week</option>
+              <option value="Within 2-4 weeks">Within 2-4 weeks</option>
+              <option value="1-2 months">1-2 months</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="serviceLevel">Service level</label>
+            <select id="serviceLevel">
+              <option value="Standard" selected>Standard</option>
+              <option value="Budget">Budget</option>
+              <option value="Premium">Premium</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn primary" id="showBtn" type="button">Show Price Range</button>
+
+        <div class="quoteBox" id="quoteBox" style="display:none">
+          <div class="quoteAmt" id="result"></div>
+          <p class="fine">Estimates are market-based ranges from local providers. Final pricing depends on scope, access, materials, and site conditions.</p>
+          <p class="fine" id="typical" style="margin-top:6px"></p>
+
+          <div class="row2" style="margin-top:12px">
+            <div>
+              <label for="leadName">Your name</label>
+              <input id="leadName" autocomplete="name" />
+            </div>
+            <div>
+              <label for="leadPhone">Phone</label>
+              <input id="leadPhone" inputmode="tel" placeholder="954-555-1234" />
+            </div>
+          </div>
+
+          <div style="margin-top:10px">
+            <label for="leadEmail">Email (required)</label>
+            <input id="leadEmail" type="email" autocomplete="email" required />
+          </div>
+
+          <button class="btn ghost" id="matchBtn" type="button">Get Matched</button>
+          <p class="fine" id="matchStatus" style="margin-top:8px"></p>
+
+        </div>
+      </form>
+    </section>
+  <!-- HOW IT WORKS -->
+  <div class="grid3" id="how">
+    <div class="card mini">
+      <h3>1) Answer a few questions</h3>
+      <p>We estimate based on job details, service type, and local market ranges.</p>
+    </div>
+
+    <div class="card mini">
+      <h3>2) Get a price range instantly</h3>
+      <p>Transparent ranges help you avoid surprises and avoid wasted calls.</p>
+    </div>
+
+    <div class="card mini">
+      <h3>3) Get matched with providers</h3>
+      <p>We route your request to providers that match your service and area.</p>
+    </div>
+  </div>
+
+  <!-- PROVIDERS -->
+  <section class="card" id="providers">
+    <h2>Become a Provider</h2>
+    <p class="muted">
+      Get price-aware local leads. No monthly fees during launch.  
+      Providers receive direct client inquiries through email.
+    </p>
+
+    <label for="pname">Name</label>
+    <input id="pname" autocomplete="name" />
+
+    <label for="pcompany" style="margin-top:10px">Company</label>
+    <input id="pcompany" autocomplete="organization" />
+
+    <label for="pemail" style="margin-top:10px">Email</label>
+    <input id="pemail" type="email" autocomplete="email" />
+
+    <button class="btn primary" type="button" id="providerApplyBtn" style="margin-top:14px">
+      Send Application
+    </button>
+
+    <p class="fine" style="margin-top:12px">
+      This MVP uses simple email routing.  
+      Later versions will include a full provider dashboard.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="card" id="contact">
+    <h2>Contact</h2>
+    <p class="muted">Questions or early access?</p>
+
+    <a id="contactLink" class="btn ghost" href="#">Email Us</a>
+
+    <p class="fine" style="margin-top:10px">
+      Current admin email: <span id="adminEmailText" style="font-weight:900"></span>
+    </p>
+
+    <p class="fine" style="margin-top:12px">
+      Tip: In the footer, click “Set admin email” to change where leads are sent — no coding required.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>&copy; <span id="year"></span> PriceFirstNow</div>
+    <div><a href="#" id="setEmailLink" style="text-decoration:underline">Set admin email</a></div>
+  </footer>
+<!-- Hidden Netlify form so Netlify detects lead form -->
+<form name="lead" id="netlifyLeadForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="hidden">
+  <input type="hidden" name="form-name" value="lead" />
+  <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
+
+  <input type="text" name="leadName" />
+  <input type="text" name="leadPhone" />
+  <input type="email" name="leadEmail" />
+
+  <input type="text" name="county" />
+  <input type="text" name="zip" />
+  <input type="text" name="category" />
+  <input type="text" name="serviceType" />
+
+  <input type="text" name="stories" />
+  <input type="text" name="prep" />
+  <input type="text" name="size" />
+  <input type="text" name="paintingScope" />
+  <input type="text" name="flooringMaterial" />
+  <input type="text" name="petOption" />
+  <input type="text" name="petCount" />
+
+  <input type="text" name="needWhen" />
+  <input type="text" name="serviceLevel" />
+  <input type="text" name="estimateLow" />
+  <input type="text" name="estimateHigh" />
+  <textarea name="notes"></textarea>
+</form>
+
+<script>
+(function(){
+
+  /* ------------------------------------------
+      CONFIG
+  ------------------------------------------ */
+
+  var DEFAULT_ADMIN_EMAIL = "pricefirstnow@gmail.com";
+  var ADMIN_EMAIL = localStorage.getItem("PFN_ADMIN_EMAIL") || DEFAULT_ADMIN_EMAIL;
+
+  var COUNTY_MULT = { broward: 1.00, palmbeach: 1.08 };
+
+  var SERVICE_LIST = {
+    cleaning: ["Standard Cleaning", "Deep Cleaning", "Move in/out"],
+    pet: ["Walking", "Sitting", "Wash and Haircut"],
+    remodel: ["Interior Painting", "Exterior Painting", "Flooring", "Drywall", "Windows and Doors", "Carpentry", "Other"],
+    plumbing: ["New Construction or Remodel", "Leak Detection", "Water Supply System", "Drain-Waste-Vent (DWV)", "Water Heaters", "Disposal Replacement", "Other"],
+    hvac: ["Complete System Installation", "Ductwork", "Duct Cleaning", "Service and Repairs", "Preventive Maintenance", "Indoor Air Quality", "Controls and Energy Efficiency", "Commercial or Condo Work"]
+  };
+
+  var PET_OPTIONS = {
+    Walking: [
+      { label: "30-minute (small)", value: "walk30s", low: 20, high: 40 },
+      { label: "30-minute (medium)", value: "walk30m", low: 25, high: 45 },
+      { label: "30-minute (large)", value: "walk30l", low: 30, high: 55 },
+      { label: "60-minute (small)", value: "walk60s", low: 35, high: 60 },
+      { label: "60-minute (medium)", value: "walk60m", low: 40, high: 70 },
+      { label: "60-minute (large)", value: "walk60l", low: 45, high: 85 }
+    ],
+    Sitting: [
+      { label: "Drop-in (small)", value: "sit_s", low: 25, high: 45 },
+      { label: "Drop-in (medium)", value: "sit_m", low: 30, high: 55 },
+      { label: "Drop-in (large)", value: "sit_l", low: 35, high: 70 },
+      { label: "Overnight (small)", value: "night_s", low: 80, high: 140 },
+      { label: "Overnight (medium)", value: "night_m", low: 90, high: 160 },
+      { label: "Overnight (large)", value: "night_l", low: 110, high: 200 }
+    ],
+    "Wash and Haircut": [
+      { label: "Small pet", value: "groom_s", low: 60, high: 110 },
+      { label: "Medium pet", value: "groom_m", low: 80, high: 150 },
+      { label: "Large pet", value: "groom_l", low: 110, high: 220 }
+    ]
+  };
+
+  /* ------------------------------------------
+      HELPERS
+  ------------------------------------------ */
+
+  function $(id){ return document.getElementById(id); }
+  function money(n){ return "$" + Math.round(n).toLocaleString(); }
+  function validateZip(v){ return /^[0-9]{5}$/.test(String(v).trim()); }
+
+  // Narrow band by 20%
+  function adjustBand(lo, hi){
+    return { lo: lo * 1.05, hi: hi * 0.80 };
+  }
+
+  function typical(lo, hi){
+    var span = hi - lo;
+    return { lo: lo + span * 0.35, hi: lo + span * 0.65 };
+  }
+
+  function setMatchStatus(msg, ok){
+    var el = $("matchStatus");
+    el.textContent = msg;
+    el.style.color = ok ? "#bbf7d0" : "#fecaca";
+  }
+
+  /* ------------------------------------------
+      CATEGORY SWITCHING
+  ------------------------------------------ */
+
+  var activeCategory = "cleaning";
+
+  function setCategory(cat){
+    activeCategory = cat;
+
+    document.querySelectorAll(".tab").forEach(btn=>{
+      btn.classList.toggle("active", btn.dataset.svc === cat);
+    });
+
+    var sel = $("service");
+    sel.innerHTML = "";
+    SERVICE_LIST[cat].forEach(function(s){
+      var o = document.createElement("option");
+      o.value = o.textContent = s;
+      sel.appendChild(o);
+    });
+
+    refreshConditionalFields();
+    hideQuote();
+  }
+
+  /* ------------------------------------------
+      CONDITIONAL FIELDS
+  ------------------------------------------ */
+
+  function refreshConditionalFields(){
+    var service = $("service").value;
+
+    // Bedrooms shown only for cleaning
+    $("bedroomWrap").classList.toggle("hidden", activeCategory !== "cleaning");
+
+    // Size hidden for cleaning + pet
+    $("sizeWrap").classList.toggle("hidden", activeCategory === "cleaning" || activeCategory === "pet");
+
+    // Painting conditional
+    var isPaint = service.toLowerCase().includes("paint");
+    $("paintingScopeWrap").classList.toggle("hidden", !isPaint);
+
+    // Flooring conditional
+    $("flooringMaterialWrap").classList.toggle("hidden", service !== "Flooring");
+
+    // Pet care
+    $("petOptionsWrap").classList.toggle("hidden", activeCategory !== "pet");
+
+    refreshPetOptions();
+  }
+
+  function refreshPetOptions(){
+    if(activeCategory !== "pet") return;
+
+    var subtype = $("service").value;
+    var sel = $("petOption");
+    sel.innerHTML = "";
+
+    (PET_OPTIONS[subtype] || []).forEach(function(o){
+      var opt = document.createElement("option");
+      opt.value = o.value;
+      opt.textContent = o.label;
+      sel.appendChild(opt);
+    });
+  }
+
+  function hideQuote(){
+    $("quoteBox").style.display = "none";
+    setMatchStatus("", true);
+  }
+
+  /* ------------------------------------------
+      PRICE CALCULATION
+  ------------------------------------------ */
+
+  function calculate(){
+    var zip = $("zip").value.trim();
+    if(!validateZip(zip)){
+      alert("Please enter a valid 5-digit ZIP code.");
+      return null;
+    }
+
+    var subtype = $("service").value;
+    var bedrooms = Number($("bedrooms").value);
+    var rawSize = Number($("size").value);
+    var size = rawSize > 0 ? rawSize : 1;
+
+    var low = 0, high = 0;
+
+    /* CLEANING — bedroom-based */
+    if(activeCategory === "cleaning"){
+      var base = {1:80, 2:120, 3:160, 4:220}[bedrooms] || 120;
+      if(subtype === "Deep Cleaning") base *= 1.55;
+      if(subtype === "Move in/out") base *= 1.75;
+      low = base * 0.9;
+      high = base * 1.25;
+    }
+
+    /* PET CARE */
+    else if(activeCategory === "pet"){
+      var sel = $("petOption").value;
+      var subtypeList = PET_OPTIONS[subtype] || [];
+      var chosen = subtypeList.find(o => o.value === sel) || subtypeList[0];
+
+      var petCount = Number($("petCount").value);
+      var countMult = {1:1.0, 2:1.3, 3:1.55, 4:1.8}[petCount] || 1;
+
+      low = chosen.low * countMult;
+      high = chosen.high * countMult;
+    }
+
+    /* DISPOSAL REPLACEMENT */
+    else if(subtype === "Disposal Replacement"){
+      low = 250 * size;
+      high = 650 * size;
+    }
+
+    /* ALL OTHER TRADES — sq ft based */
+    else {
+      low = size * 1.5;
+      high = size * 3.5;
+    }
+
+    /* SERVICE MULTIPLIER */
+    var mult = {cleaning:1.0, pet:1.0, remodel:1.25, plumbing:1.15, hvac:1.4}[activeCategory] || 1;
+    low *= mult; high *= mult;
+
+    /* COUNTY */
+    var cm = COUNTY_MULT[$("county").value] || 1;
+    low *= cm; high *= cm;
+
+    /* NARROW BAND */
+    var b = adjustBand(low, high);
+
+    return {
+      low: b.lo,
+      high: b.hi,
+      bedrooms: bedrooms,
+      size: size,
+      subtype: subtype,
+      cat: activeCategory,
+      zip: zip,
+      county: $("county").value,
+      notes: $("notes").value.trim()
+    };
+  }
+
+  /* ------------------------------------------
+      MATCH (Netlify → fallback to email)
+  ------------------------------------------ */
+
+  function submitLead(payload){
+    var body = Object.keys(payload)
+      .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(payload[k] || ""))
+      .join("&");
+
+    // Works only when published on Netlify
+    if(location.protocol === "file:"){
+      setMatchStatus("Open this on Netlify to submit leads.", false);
+      return;
+    }
+
+    fetch("/", {
+      method:"POST",
+      headers:{ "Content-Type":"application/x-www-form-urlencoded" },
+      body:body
+    })
+    .then(r => {
+      if(r.ok){
+        setMatchStatus("Submitted — a provider will contact you soon!", true);
+      } else {
+        fallbackEmail(payload);
+      }
+    })
+    .catch(()=> fallbackEmail(payload));
+  }
+
+  function fallbackEmail(p){
+    var msg =
+      "Lead Request\n\n" +
+      "Category: " + p.cat + "\n" +
+      "Service: " + p.subtype + "\n" +
+      "ZIP: " + p.zip + "\n\n" +
+      "Estimate: " + money(p.estimateLow) + " - " + money(p.estimateHigh) + "\n\n" +
+      "Name: " + p.leadName + "\n" +
+      "Phone: " + p.leadPhone + "\n" +
+      "Email: " + p.leadEmail + "\n\n" +
+      (p.notes ? "Notes:\n" + p.notes : "");
+
+    window.location.href =
+      "mailto:" + ADMIN_EMAIL +
+      "?subject=" + encodeURIComponent("New Lead Request") +
+      "&body=" + encodeURIComponent(msg);
+  }
+
+  /* ------------------------------------------
+      EVENT LISTENERS
+  ------------------------------------------ */
+
+  document.querySelectorAll(".tab").forEach(btn=>{
+    btn.addEventListener("click", ()=> setCategory(btn.dataset.svc));
+  });
+
+  $("service").addEventListener("change", ()=>{ refreshConditionalFields(); hideQuote(); });
+  $("bedrooms").addEventListener("change", hideQuote);
+  $("size").addEventListener("input", hideQuote);
+  $("petOption").addEventListener("change", hideQuote);
+  $("petCount").addEventListener("change", hideQuote);
+
+  $("showBtn").addEventListener("click", function(){
+    var r = calculate();
+    if(!r) return;
+
+    $("result").textContent = money(r.low) + " - " + money(r.high);
+
+    var t = typical(r.low, r.high);
+    $("typical").textContent =
+      "Most similar jobs land around " + money(t.lo) + " - " + money(t.hi);
+
+    $("quoteBox").style.display = "block";
+  });
+
+  $("matchBtn").addEventListener("click", function(){
+    var r = calculate();
+    if(!r) return;
+
+    var name = $("leadName").value.trim();
+    var phone = $("leadPhone").value.trim();
+    var email = $("leadEmail").value.trim();
+
+    if(!name) return alert("Please enter your name.");
+    if(!phone) return alert("Please enter your phone number.");
+    if(!email || !email.includes("@")) return alert("Please enter a valid email.");
+
+    var payload = {
+      "form-name":"lead",
+      leadName:name,
+      leadPhone:phone,
+      leadEmail:email,
+      county:r.county,
+      zip:r.zip,
+      category:r.cat,
+      serviceType:r.subtype,
+      size:r.size,
+      bedrooms:r.bedrooms,
+      estimateLow:Math.round(r.low),
+      estimateHigh:Math.round(r.high),
+      notes:r.notes
+    };
+
+    setMatchStatus("Submitting...", true);
+    submitLead(payload);
+  });
+
+  $("providerApplyBtn").addEventListener("click", function(){
+    var name = $("pname").value.trim();
+    var company = $("pcompany").value.trim();
+    var email = $("pemail").value.trim();
+
+    if(!name || !email) return alert("Please enter your name and email.");
+
+    var msg = "Provider Application\n\n" +
+      "Name: " + name + "\n" +
+      "Company: " + company + "\n" +
+      "Email: " + email;
+
+    window.location.href =
+      "mailto:" + ADMIN_EMAIL +
+      "?subject=Provider Application" +
+      "&body=" + encodeURIComponent(msg);
+  });
+
+  $("contactLink").addEventListener("click", function(e){
+    e.preventDefault();
+    window.location.href =
+      "mailto:" + ADMIN_EMAIL +
+      "?subject=PriceFirstNow Inquiry";
+  });
+
+  $("setEmailLink").addEventListener("click", function(e){
+    e.preventDefault();
+    var next = prompt("Enter admin email:", ADMIN_EMAIL);
+    if(!next) return;
+    ADMIN_EMAIL = next.trim();
+    localStorage.setItem("PFN_ADMIN_EMAIL", ADMIN_EMAIL);
+    $("adminEmailText").textContent = ADMIN_EMAIL;
+    alert("Saved.");
+  });
+
+  /* ------------------------------------------
+      INIT
+  ------------------------------------------ */
+
+  $("adminEmailText").textContent = ADMIN_EMAIL;
+  $("year").textContent = new Date().getFullYear();
+  setCategory("cleaning");
+
+})();
+</script>
