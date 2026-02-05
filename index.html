@@ -18,7 +18,7 @@
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;PriceFirstNow - Instant Price Ranges&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Instant price ranges for cleaning, remodeling, plumbing, HVAC, and pet care in Broward &amp; Palm Beach County." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Instant price ranges for cleaning, pet care, remodeling, plumbing, and HVAC in Broward &amp; Palm Beach." /&gt;</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
@@ -34,7 +34,7 @@
 <p class="p1"><span class="Apple-converted-space">      </span>--radius:22px;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>body{</p>
 <p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
@@ -61,12 +61,7 @@
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mark{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width:42px;height:42px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius:14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(135deg,var(--accent),var(--accent2));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow:var(--shadow);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>.brandName{font-size:18px}</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>nav{display:flex;gap:14px;flex-wrap:wrap}</p>
@@ -91,12 +86,11 @@
 <p class="p1"><span class="Apple-converted-space">    </span>.heroLeft{padding:30px}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>.heroRight{padding:20px}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1{margin:0 0 12px;font-size:44px;line-height:1.05}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1{margin:0 0 12px;font-size:46px;line-height:1.05}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>h2{margin:0 0 10px;font-size:22px}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>h3{margin:0 0 6px}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>.muted{color:var(--muted);line-height:1.55}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* CTA buttons */</p>
 <p class="p1"><span class="Apple-converted-space">    </span>.ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>.btn{</p>
@@ -109,7 +103,7 @@
 <p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>gap:10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.10);</p>
 <p class="p1"><span class="Apple-converted-space">      </span>color:var(--text);</p>
 <p class="p1"><span class="Apple-converted-space">      </span>transition:transform .12s ease, opacity .12s ease;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>user-select:none;</p>
@@ -121,24 +115,10 @@
 <p class="p1"><span class="Apple-converted-space">      </span>color:var(--ink);</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{transform:translateY(-1px);opacity:0.9}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.ghost{background:rgba(255,255,255,.10)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{transform:translateY(-1px);opacity:1}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Trust Banner */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.trustBanner{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top:16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align:left;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.trustStars{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size:20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom:4px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.trustText{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size:14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight:900;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color:var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>.badge{</p>
 <p class="p1"><span class="Apple-converted-space">      </span>padding:10px 14px;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>border-radius:999px;</p>
@@ -148,22 +128,22 @@
 <p class="p1"><span class="Apple-converted-space">      </span>font-size:13px;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width:960px){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.hero{grid-template-columns:1fr;}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width:640px){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:960px){ .hero{grid-template-columns:1fr} }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:640px){</p>
 <p class="p1"><span class="Apple-converted-space">      </span>h1{font-size:34px}</p>
 <p class="p1"><span class="Apple-converted-space">      </span>.heroLeft{padding:22px}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.heroRight{padding:16px}</p>
 <p class="p1"><span class="Apple-converted-space">      </span>nav{justify-content:center}</p>
 <p class="p1"><span class="Apple-converted-space">      </span>header{flex-direction:column;align-items:flex-start}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.ctaRow{flex-direction:column}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
 <p class="p1">&lt;/head&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
 <p class="p1">&lt;div class="container"&gt;</p>
 <p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HEADER --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="brand"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="mark"&gt;&lt;/div&gt;</p>
@@ -177,37 +157,50 @@
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
 <p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HERO SECTION --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card heroLeft"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;See the price first.&lt;br&gt;Then choose your provider.&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="muted"&gt;Instant price ranges for home services in Broward and Palm Beach County. No calls. No pressure.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;See the price first.&lt;br /&gt;Then choose your provider.&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="muted"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Transparent price ranges for home services in Broward &amp; Palm Beach County.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>No calls. No pressure.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ctaRow"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" id="scrollQuoteBtn"&gt;Get Instant Quote&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="scrollProviderBtn"&gt;Become a Provider&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn ghost" id="scrollProviderBtn"&gt;Become a Provider&lt;/button&gt;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- ⭐ TRUST BANNER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="trustBanner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="trustStars"&gt;⭐⭐⭐⭐⭐&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="trustText"&gt;Trusted by homeowners across Broward &amp; Palm Beach&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Info banner to fill empty space --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:20px;padding:14px;border:1px solid rgba(255,255,255,.25);</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>border-radius:14px;background:rgba(0,0,0,.18)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="muted" style="margin:0;font-weight:700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>No bank info required. No account needed. Your quote is 100% anonymous.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="badges"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;60-second estimate&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;Price-aware clients&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;Local matching&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;No bank info&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;Local pricing&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;Real providers&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="badge"&gt;No commitments&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- QUOTE PANEL START --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card heroRight" id="quote"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tabs" aria-label="Services"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab active" data-svc="cleaning"&gt;Cleaning&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="pet"&gt;Pet Care&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="remodel"&gt;Remodeling&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="plumbing"&gt;Plumbing&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab" data-svc="hvac"&gt;HVAC&lt;/button&gt;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="buildTag" class="muted" style="font-weight:900;margin-top:12px"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card heroRight" id="quote"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 style="margin-top:0"&gt;Instant Price Estimate&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Instant Price Estimate&lt;/h2&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;form id="quoteForm" autocomplete="on"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- County + ZIP --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;form id="quoteForm"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="county"&gt;County&lt;/label&gt;</p>
@@ -216,81 +209,50 @@
 <p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="palmbeach"&gt;Palm Beach&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="zip"&gt;ZIP Code&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="zip" inputmode="numeric" maxlength="5" placeholder="33063" required /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Service category tabs --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tabs" aria-label="Services"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab active" type="button" data-svc="cleaning"&gt;Cleaning&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab" type="button" data-svc="pet"&gt;Pet Care&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab" type="button" data-svc="remodel"&gt;Remodeling&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab" type="button" data-svc="plumbing"&gt;Plumbing&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab" type="button" data-svc="hvac"&gt;HVAC&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Service type dropdown --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SERVICE TYPE --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="service"&gt;Service type&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="service"&gt;&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ===== CLEANING BEDROOM COUNT UI ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- CLEANING SPECIFIC --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="cleaningBedroomsWrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="cleanBedrooms"&gt;Number of bedrooms&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="cleanBedrooms"&gt;Bedrooms&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="cleanBedrooms"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="1" selected&gt;1 bedroom&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="2"&gt;2 bedrooms&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="3"&gt;3 bedrooms&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="4"&gt;4+ bedrooms&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="1" selected&gt;1 Bedroom&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="2"&gt;2 Bedrooms&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="3"&gt;3 Bedrooms&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="4"&gt;4+ Bedrooms&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Cleaning scope --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="cleaningScopeWrap"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="cleanScope"&gt;Cleaning type&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="cleanScope"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="standard" selected&gt;Standard Cleaning&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="deep"&gt;Deep Cleaning&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="move"&gt;Move in / Move out&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="move"&gt;Move In / Move Out&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Stories + prep --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="stories"&gt;Stories / access&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="stories"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="1-story / easy access" selected&gt;1-story / easy access&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="2-story"&gt;2-story&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="3+ stories or condo"&gt;3+ stories or condo&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="difficult access"&gt;Difficult access&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="prep"&gt;Prep / repairs needed&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="prep"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="none" selected&gt;None&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="light (minor patching)"&gt;Light (minor patching)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="medium (repairs)"&gt;Medium (repairs)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="heavy (major repairs)"&gt;Heavy (major repairs)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- AREA SIZE (Hidden when Cleaning or Pet Care) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SIZE FIELD --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="sizeWrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="size" id="sizeLabel"&gt;Area / size (sq ft)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label id="sizeLabel" for="size"&gt;Area / size (sq ft)&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;input id="size" inputmode="numeric" placeholder="e.g. 500" /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Painting scope (Remodel) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PAINTING SUBTYPES --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="paintingScopeWrap" class="hidden"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="paintingScope"&gt;If painting: scope&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="paintingScope"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Walls only" selected&gt;Walls only&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Walls only"&gt;Walls only&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Walls + ceilings"&gt;Walls + ceilings&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Ceilings only"&gt;Ceilings only&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Trim / doors"&gt;Trim / doors&lt;/option&gt;</p>
@@ -298,11 +260,11 @@
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Flooring material (Remodel) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- FLOORING MATERIAL --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="flooringMaterialWrap" class="hidden"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="flooringMaterial"&gt;Flooring material&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;select id="flooringMaterial"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Tile" selected&gt;Tile&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Tile"&gt;Tile&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Wood"&gt;Wood&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Natural stone"&gt;Natural stone&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="Laminate"&gt;Laminate&lt;/option&gt;</p>
@@ -310,7 +272,7 @@
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PET OPTIONS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PET CARE OPTIONS --&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="petOptionsWrap" class="hidden"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row2"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
@@ -329,24 +291,46 @@
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Notes --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="notes"&gt;Notes (optional)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea id="notes" placeholder="e.g., condo rules, access, materials already purchased..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ADDITIONAL QUESTIONS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="stories"&gt;Stories / access&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="stories"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="1-story / easy access"&gt;1-story / easy access&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="2-story"&gt;2-story&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="3+ stories or condo"&gt;3+ stories or condo&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="difficult access"&gt;Difficult access&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="prep"&gt;Prep / repairs needed&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="prep"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="none"&gt;None&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="light (minor patching)"&gt;Light repairs&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="medium (repairs)"&gt;Medium repairs&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="heavy (major repairs)"&gt;Heavy repairs&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Need when + service level --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="notes"&gt;Notes (optional)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea id="notes" placeholder="Condo rules, access, material supplied…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="row2"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="needWhen"&gt;When do you need it?&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="needWhen"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Flexible" selected&gt;Flexible&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Flexible"&gt;Flexible&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="ASAP"&gt;ASAP&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Within 1 week"&gt;Within 1 week&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Within 2-4 weeks"&gt;Within 2-4 weeks&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="1-2 months"&gt;1-2 months&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Within 2-4 weeks"&gt;Within 2–4 weeks&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="1-2 months"&gt;1–2 months&lt;/option&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="serviceLevel"&gt;Service level&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="serviceLevel"&gt;</p>
@@ -358,506 +342,451 @@
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Show Price --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" style="width:100%" type="button" id="showBtn"&gt;Show Price Range&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" id="showBtn" type="button" style="width:100%;margin-top:8px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Show Price Range</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- RESULTS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="quoteBox" id="quoteBox" style="display:none"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="quoteAmt" id="result"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="fine"&gt;Estimates are based on market averages. Providers may offer different pricing.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="fine" id="typical" style="margin-top:6px"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- QUOTE RESULT BOX --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="quoteBox" class="quoteBox" style="display:none;margin-top:14px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="result" class="quoteAmt"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="fine"&gt;Your estimate is based on local averages.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="typical" class="fine"&gt;&lt;/p&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row2" style="margin-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row2" style="margin-top:14px"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="leadName"&gt;Your name&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="leadName" autocomplete="name" placeholder="John" /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="leadPhone"&gt;Phone&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="leadPhone" inputmode="tel" autocomplete="tel" placeholder="(954) 555-1234" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="leadPhone" autocomplete="tel" placeholder="(954) 555-1234" /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:12px"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="leadEmail"&gt;Email (required)&lt;/label&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="leadEmail" type="email" autocomplete="email" placeholder="you@email.com" /&gt;</p>
 <p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:10px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn ghost" type="button" id="matchBtn"&gt;Get Matched&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="matchBtn" class="btn ghost" type="button" style="margin-top:14px;width:100%"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Get Matched</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="fine" id="matchStatus" style="margin-top:8px"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="matchStatus" class="fine" style="margin-top:10px"&gt;&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">      </span>&lt;/form&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HOW IT WORKS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid3" id="how"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card mini"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;1) Answer a few questions&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We estimate based on service type and local market ranges.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card mini"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;2) Get a price range instantly&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Transparent ranges help you avoid surprises and reduce wasted calls.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card mini"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;3) Get matched with providers&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We route your request to providers that match your area and service.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HOW IT WORKS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="grid3" id="how" style="margin-top:28px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card mini"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;1) Answer a few questions&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;We estimate based on service type and local market ranges.&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PROVIDER SECTION --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card" id="providers"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Become a Provider&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="muted"&gt;Get price-aware local leads. No monthly fee during launch.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card mini"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;2) Get a price range instantly&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Transparent price ranges help you avoid surprises and reduce wasted calls.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label for="pname"&gt;Name&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="pname" autocomplete="name" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card mini"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;3) Get matched with providers&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;We route your request to real local providers who can take your job.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label for="pcompany" style="margin-top:10px"&gt;Company&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="pcompany" autocomplete="organization" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- PROVIDER SIGNUP --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="providers" class="card" style="margin-top:30px;padding:22px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Become a Provider&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="muted"&gt;Get price-aware, pre-qualified local leads. <span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>No monthly fee during launch.&lt;/p&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label for="pemail" style="margin-top:10px"&gt;Email&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="pemail" type="email" autocomplete="email" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="pname"&gt;Name&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="pname" autocomplete="name" /&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn primary" style="margin-top:14px" type="button" id="providerApplyBtn"&gt;Send Application&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="pcompany" style="margin-top:10px"&gt;Company&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="pcompany" autocomplete="organization" /&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="fine" style="margin-top:10px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>This MVP uses email to collect provider signups. <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>Later, we can add a real form and database.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label for="pemail" style="margin-top:10px"&gt;Email&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="pemail" type="email" autocomplete="email" /&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CONTACT --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card" id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="muted"&gt;Questions or early access?&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a id="contactLink" class="btn ghost" href="#"&gt;Email Us&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="providerApplyBtn" class="btn primary" type="button" style="margin-top:16px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Send Application</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="fine" style="margin-top:10px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Email: &lt;span id="adminEmailText" style="font-weight:900"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="fine" style="margin-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>This MVP sends provider applications to your admin email automatically.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="fine" style="margin-top:12px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Tip: In the footer, click &lt;em&gt;Set admin email&lt;/em&gt; to change where leads are sent</p>
-<p class="p1"><span class="Apple-converted-space">        </span>(no code editing needed).</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CONTACT --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="contact" class="card" style="margin-top:30px;padding:22px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Contact&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="muted"&gt;Questions or early access?&lt;/p&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FOOTER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;&amp;copy; &lt;span id="year"&gt;&lt;/span&gt; PriceFirstNow&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" id="setEmailLink" style="text-decoration:underline"&gt;Set admin email&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt; &lt;!-- end container --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a id="contactLink" class="btn ghost" href="#"&gt;Email Us&lt;/a&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- NETLIFY FORM (HIDDEN) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;form name="lead" id="netlifyLeadForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="hidden" name="form-name" value="lead" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="hidden"&gt;&lt;label&gt;Do not fill: &lt;input name="bot-field" /&gt;&lt;/label&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="fine" style="margin-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Receiving emails at: &lt;strong id="adminEmailText"&gt;&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="leadName" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="leadPhone" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="email" name="leadEmail" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="county" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="zip" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="category" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="serviceType" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="stories" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="prep" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="fine" style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Tip: Use the footer below to change the admin email anytime.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CLEANING --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="cleanBedrooms" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="cleanScope" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FOOTER --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer style="margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;color:var(--muted);font-size:13px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;&amp;copy; &lt;span id="year"&gt;&lt;/span&gt; PriceFirstNow&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- SIZE (only for non-cleaning) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="size" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#" id="setEmailLink" style="color:var(--muted);text-decoration:underline"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Set admin email</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- REMODEL --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="paintingScope" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="flooringMaterial" /&gt;</p>
+<p class="p1">&lt;/div&gt; &lt;!-- close .container --&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PET CARE --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="petOption" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="petCount" /&gt;</p>
+<p class="p1">&lt;!-- NETLIFY HIDDEN FORM (REQUIRED for Get Matched to work!) --&gt;</p>
+<p class="p1">&lt;form name="lead" id="netlifyLeadForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="hidden" name="form-name" value="lead" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="hidden"&gt;&lt;label&gt;Do not fill this out: &lt;input name="bot-field" /&gt;&lt;/label&gt;&lt;/p&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="needWhen" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="serviceLevel" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Lead details --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="leadName" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="leadPhone" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="email" name="leadEmail" /&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="estimateLow" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" name="estimateHigh" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Job details --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="county" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="zip" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="category" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="serviceType" /&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;textarea name="notes"&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Cleaning --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="cleanBedrooms" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="cleanScope" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Remodel fields --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="stories" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="prep" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="size" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="paintingScope" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="flooringMaterial" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Pet care fields --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="petOption" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="petCount" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="needWhen" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="serviceLevel" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="estimateLow" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" name="estimateHigh" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;textarea name="notes"&gt;&lt;/textarea&gt;</p>
+<p class="p1">&lt;/form&gt;</p>
 <p class="p1">&lt;script&gt;</p>
 <p class="p1">(function(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Default admin email</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var DEFAULT_ADMIN_EMAIL = "pricefirstnow@gmail.com";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var ADMIN_EMAIL = localStorage.getItem("PFN_ADMIN_EMAIL") || DEFAULT_ADMIN_EMAIL;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>BASIC UTILITIES</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function $(id){ return document.getElementById(id); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function money(n){ return "$" + Math.round(n).toLocaleString(); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function validateZip(v){ return /^[0-9]{5}$/.test(v); }</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const $ = id =&gt; document.getElementById(id);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function money(n){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>return "$" + Math.round(Number(n)).toLocaleString();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function validateZip(v){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>return /^[0-9]{5}$/.test(String(v || "").trim());</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function applyConfidenceBand(lo, hi){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>return { lo: lo * 1.05, hi: hi * 0.80 };</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function typicalBand(lo, hi){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const span = Math.max(0, hi - lo);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>return { lo: lo + span * 0.35, hi: lo + span * 0.65 };</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function encodeForm(data){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const parts = [];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>for(const k in data){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(!Object.hasOwn(data, k)) continue;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>let v = data[k];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(v === undefined || v === null) v = "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>parts.push(encodeURIComponent(k) + "=" + encodeURIComponent(String(v)));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>return parts.join("&amp;");</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>SETTINGS &amp; DATA</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>let ADMIN_EMAIL = localStorage.getItem("PFN_ADMIN_EMAIL") || "pricefirstnow@gmail.com";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let activeCategory = "cleaning";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const COUNTY_MULT = {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>broward: 1.00,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>palmbeach: 1.08</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* SERVICE LIST */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const SERVICE_LIST = {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cleaning: ["Standard", "Deep", "Move-in/out"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// SERVICE LIST</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var SERVICE_LIST = {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cleaning: ["Standard Home Cleaning", "Deep Cleaning", "Move In/Out"],</p>
 <p class="p1"><span class="Apple-converted-space">    </span>pet: ["Walking", "Sitting", "Wash and Haircut"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>remodel: ["Interior Painting", "Exterior Painting", "Flooring", "Drywall", "Carpentry", "Windows and Doors"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>plumbing: ["Leak Detection", "Water Heaters", "Disposal Replacement", "Other"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hvac: ["System Install", "Ductwork", "Duct Cleaning", "Repairs", "Maintenance"]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>remodel: ["Interior Painting", "Exterior Painting", "Flooring", "Drywall", "Windows and Doors", "Carpentry", "Other"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>plumbing: ["New Construction or Remodel", "Leak Detection", "Water Supply System", "Drain-Waste-Vent (DWV)", "Water Heaters", "Disposal Replacement", "Other"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>hvac: ["Complete System Installation", "Ductwork", "Duct Cleaning", "Service and Repairs", "Preventive Maintenance", "Indoor Air Quality", "Controls and Energy Efficiency", "Commercial or Condo Work"]</p>
 <p class="p1"><span class="Apple-converted-space">  </span>};</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* PET PRICING (unchanged) */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const PET_OPTIONS = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// PET OPTIONS (flat prices)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var PET_OPTIONS = {</p>
 <p class="p1"><span class="Apple-converted-space">    </span>Walking: [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "30-min (small)", value: "walk30s", low: 22, high: 40 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "30-min (med)", value: "walk30m", low: 25, high: 45 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "30-min (large)", value: "walk30l", low: 30, high: 55 }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"30-min walk (small)", low:22, high:40 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"30-min walk (medium)", low:25, high:45 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"30-min walk (large)", low:30, high:55 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"60-min walk (small)", low:38, high:65 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"60-min walk (medium)", low:42, high:75 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"60-min walk (large)", low:50, high:90 }</p>
 <p class="p1"><span class="Apple-converted-space">    </span>],</p>
 <p class="p1"><span class="Apple-converted-space">    </span>Sitting: [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "Drop-in (small)", value: "sit_s", low: 28, high: 50 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "Drop-in (med)", value: "sit_m", low: 32, high: 60 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "Drop-in (large)", value: "sit_l", low: 38, high: 70 }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Drop-in visit (small)", low:28, high:50 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Drop-in visit (medium)", low:32, high:60 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Drop-in visit (large)", low:38, high:70 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Overnight (small)", low:85, high:150 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Overnight (medium)", low:95, high:170 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Overnight (large)", low:110, high:200 }</p>
 <p class="p1"><span class="Apple-converted-space">    </span>],</p>
 <p class="p1"><span class="Apple-converted-space">    </span>"Wash and Haircut": [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "Small pet", value: "groom_s", low: 70, high: 120 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "Medium pet", value: "groom_m", low: 90, high: 160 },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ label: "Large pet", value: "groom_l", low: 120, high: 220 }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Small pet", low:70, high:120 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Medium pet", low:90, high:160 },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ label:"Large pet", low:120, high:220 }</p>
 <p class="p1"><span class="Apple-converted-space">    </span>]</p>
 <p class="p1"><span class="Apple-converted-space">  </span>};</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>CATEGORY SWITCHING</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var activeCategory = "cleaning";</p>
 <p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -----------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// POPULATE SERVICE DROPDOWN</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -----------------------------------</p>
 <p class="p1"><span class="Apple-converted-space">  </span>function setCategory(cat){</p>
 <p class="p1"><span class="Apple-converted-space">    </span>activeCategory = cat;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// update tab highlight</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll(".tab").forEach(tab =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>tab.classList.toggle("active", tab.dataset.svc === cat);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll(".tab").forEach(function(btn){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.classList.toggle("active", btn.dataset.svc === cat);</p>
 <p class="p1"><span class="Apple-converted-space">    </span>});</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// populate service dropdown</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const sel = $("service");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var sel = $("service");</p>
 <p class="p1"><span class="Apple-converted-space">    </span>sel.innerHTML = "";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>(SERVICE_LIST[cat] || []).forEach(name =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const o = document.createElement("option");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>o.value = name;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>o.textContent = name;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>SERVICE_LIST[cat].forEach(function(s){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var o = document.createElement("option");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>o.value = s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>o.textContent = s;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>sel.appendChild(o);</p>
 <p class="p1"><span class="Apple-converted-space">    </span>});</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// show the right fields</p>
-<p class="p1"><span class="Apple-converted-space">    </span>refreshFields();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshConditionalFields();</p>
 <p class="p1"><span class="Apple-converted-space">    </span>hideQuote();</p>
 <p class="p1"><span class="Apple-converted-space">  </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>REFRESH CONDITIONAL UI</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// FIELD VISIBILITY</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function refreshConditionalFields(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var isCleaning = (activeCategory === "cleaning");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var isPet = (activeCategory === "pet");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var subtype = $("service").value;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function refreshFields(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const isPet = activeCategory === "pet";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const isCleaning = activeCategory === "cleaning";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// cleaning-specific</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("cleaningBedroomsWrap").style.display = isCleaning ? "block" : "none";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("cleaningScopeWrap").style.display = isCleaning ? "block" : "none";</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Bedrooms shown for cleaning</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("cleaningBedroomsWrap")?.classList.toggle("hidden", !isCleaning);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("cleaningScopeWrap")?.classList.toggle("hidden", !isCleaning);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// pet</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("petOptionsWrap").style.display = isPet ? "block" : "none";</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Hide size when cleaning or pet</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("sizeWrap")?.classList.toggle("hidden", isCleaning || isPet);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// size field hidden for pet</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("sizeWrap").style.display = isPet ? "none" : "block";</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Pet options</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("petOptionsWrap")?.classList.toggle("hidden", !isPet);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>refreshPetOptions();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// painting</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("paintingScopeWrap").style.display = (/painting/i).test(subtype) ? "block" : "none";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// flooring</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("flooringMaterialWrap").style.display = (subtype === "Flooring") ? "block" : "none";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// disposal replacement</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(subtype === "Disposal Replacement"){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("sizeLabel").textContent = "Quantity";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("size").placeholder = "1";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("sizeLabel").textContent = "Area / size (sq ft)";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("size").placeholder = "500";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>refreshPetDropdown();</p>
 <p class="p1"><span class="Apple-converted-space">  </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function refreshPetOptions(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(activeCategory !== "pet") return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function refreshPetDropdown(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var subtype = $("service").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var wrap = $("petOptionsWrap");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(activeCategory !== "pet"){ return; }</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const subtype = $("service").value;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const opts = PET_OPTIONS[subtype] || [];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const sel = $("petOption");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var select = $("petOption");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>select.innerHTML = "";</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>sel.innerHTML = "";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>opts.forEach(o =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const option = document.createElement("option");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>option.value = o.value;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>option.textContent = o.label;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>sel.appendChild(option);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>(PET_OPTIONS[subtype] || []).forEach(function(opt){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var o = document.createElement("option");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>o.textContent = opt.label;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>o.value = opt.label;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>select.appendChild(o);</p>
 <p class="p1"><span class="Apple-converted-space">    </span>});</p>
 <p class="p1"><span class="Apple-converted-space">  </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>PRICE CALCULATION</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function hideQuote(){ $("quoteBox").style.display = "none"; $("matchStatus").textContent = ""; }</p>
 <p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// PRICE CALCULATION</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
 <p class="p1"><span class="Apple-converted-space">  </span>function calculate(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var zip = $("zip").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(!validateZip(zip)){ alert("Please enter a valid ZIP code."); return null; }</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const county = $("county").value;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const zip = $("zip").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!validateZip(zip)){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>alert("Please enter a valid ZIP.");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var category = activeCategory;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var subtype = $("service").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var size = Number($("size").value) || 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>var low = 0, high = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// CLEANING LOGIC</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(category === "cleaning"){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var beds = Number($("cleanBedrooms").value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var type = $("cleanScope").value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var base = {1:90, 2:120, 3:150, 4:190}[beds] || 120;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var deepMult = type === "deep" ? 1.45 : 1.0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var moveMult = type === "move" ? 1.75 : 1.0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>var mult = deepMult * moveMult;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>low = base * mult;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>high = base * mult * 1.35;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const subtype = $("service").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// PET CARE</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if(category === "pet"){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var opt = $("petOption").value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var count = Number($("petCount").value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(count &gt; 4) count = 4;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* CLEANING PRICE LOGIC */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(activeCategory === "cleaning"){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var list = PET_OPTIONS[subtype];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var found = list ? list.find(o =&gt; o.label === opt) : null;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const bedrooms = Number($("cleanBedrooms").value || 1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const scope = $("cleanScope").value;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>let baseLow = 0, baseHigh = 0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>switch(scope){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>case "Standard":</p>
-<p class="p1"><span class="Apple-converted-space">          </span>baseLow = 80 + bedrooms * 30;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>baseHigh = 120 + bedrooms * 40;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>break;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>case "Deep":</p>
-<p class="p1"><span class="Apple-converted-space">          </span>baseLow = 150 + bedrooms * 45;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>baseHigh = 220 + bedrooms * 60;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>break;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>case "Move-in/out":</p>
-<p class="p1"><span class="Apple-converted-space">          </span>baseLow = 200 + bedrooms * 55;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>baseHigh = 320 + bedrooms * 70;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(found){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var mult = {1:1.0, 2:1.35, 3:1.6, 4:1.8}[count];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>low = found.low * mult;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>high = found.high * mult;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>low = 30;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>high = 60;</p>
 <p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>// county adjustment</p>
-<p class="p1"><span class="Apple-converted-space">      </span>baseLow *= COUNTY_MULT[county] || 1.0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>baseHigh *= COUNTY_MULT[county] || 1.0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const c = applyConfidenceBand(baseLow, baseHigh);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>return {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>low: c.lo,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>high: c.hi,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>county,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>zip,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>cat: activeCategory,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>subtype,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>bedrooms,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>scope</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* PET PRICE LOGIC */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(activeCategory === "pet"){</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const subtypeOpts = PET_OPTIONS[subtype] || [];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const chosen = subtypeOpts.find(x =&gt; x.value === $("petOption").value) || subtypeOpts[0];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const petCount = Math.min(4, Number($("petCount").value || 1));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const extraMult = petCount === 1 ? 1 : petCount === 2 ? 1.35 : petCount === 3 ? 1.6 : 1.8;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>let low = chosen.low * extraMult;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>let high = chosen.high * extraMult;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const c = applyConfidenceBand(low, high);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>return {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>low: c.lo,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>high: c.hi,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>county,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>zip,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>cat: activeCategory,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>subtype,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>petOption: chosen.label,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>petCount</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// DISPOSAL REPLACEMENT</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if(subtype === "Disposal Replacement"){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var qty = size &lt; 1 ? 1 : size;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>low = qty * 250;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>high = qty * 650;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* OTHER TRADES (size-based) */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const rawSize = $("size").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const size = Number(rawSize);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!size || size &lt; 1){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>alert("Enter a realistic size.");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// REMODEL / PLUMBING / HVAC general formula</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(size &lt; 1){ alert("Please enter size."); return null; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>low = size * 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>high = size * 3.6;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// flooring material</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(subtype === "Flooring"){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var m = {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"Tile":1.0, "Wood":1.12, "Natural stone":1.35, "Laminate":0.85, "Carpet":0.8</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}[$("flooringMaterial").value] || 1.0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>low *= m;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>high *= m;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>let low = size * 1.5;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let high = size * 3.5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// SERVICE LEVEL MULTIPLIERS</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var lvl = $("serviceLevel").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var lvlMult = {Budget:0.92, Standard:1.0, Premium:1.12, Luxury:1.25}[lvl] || 1.0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>low *= lvlMult; high *= lvlMult;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// category multipliers</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const svcMult = { remodel: 1.25, plumbing: 1.15, hvac: 1.4 };</p>
-<p class="p1"><span class="Apple-converted-space">    </span>low *= svcMult[activeCategory] || 1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>high *= svcMult[activeCategory] || 1;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// disposal special case</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(activeCategory === "plumbing" &amp;&amp; subtype === "Disposal Replacement"){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>low = 250 * size;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>high = 650 * size;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>low *= COUNTY_MULT[county] || 1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>high *= COUNTY_MULT[county] || 1;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const c = applyConfidenceBand(low, high);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// CONFIDENCE BAND</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var adjLow = low * 1.05;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var adjHigh = high * 0.8;</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>return {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>low: c.lo,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>high: c.hi,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>county,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>zip,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cat: activeCategory,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>low: adjLow,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>high: adjHigh,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>category,</p>
 <p class="p1"><span class="Apple-converted-space">      </span>subtype,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>size</p>
+<p class="p1"><span class="Apple-converted-space">      </span>zip,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>size,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cleanBedrooms: $("cleanBedrooms").value,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cleanScope: $("cleanScope").value,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>notes: $("notes").value,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>serviceLevel: lvl</p>
 <p class="p1"><span class="Apple-converted-space">    </span>};</p>
 <p class="p1"><span class="Apple-converted-space">  </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>SHOW PRICE</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function hideQuote(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("quoteBox").style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("showBtn").addEventListener("click", () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const r = calculate();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// SHOW PRICE RANGE</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("showBtn").onclick = function(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var r = calculate();</p>
 <p class="p1"><span class="Apple-converted-space">    </span>if(!r) return;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("result").innerText = money(r.low) + " – " + money(r.high);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("result").textContent = money(r.low) + " – " + money(r.high);</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const t = typicalBand(r.low, r.high);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("typical").innerText =</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Most similar jobs land around " + money(t.lo) + " – " + money(t.hi);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var midLow = r.low + (r.high - r.low) * 0.35;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var midHigh = r.low + (r.high - r.low) * 0.65;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("typical").textContent = "Most similar jobs fall around " +</p>
+<p class="p1"><span class="Apple-converted-space">      </span>money(midLow) + " – " + money(midHigh);</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>$("quoteBox").style.display = "block";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>GET MATCHED (Email OR Netlify)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("matchBtn").addEventListener("click", () =&gt; {</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const r = calculate();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// GET MATCHED (Netlify submit)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("matchBtn").onclick = function(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var r = calculate();</p>
 <p class="p1"><span class="Apple-converted-space">    </span>if(!r) return;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const name = $("leadName").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const phone = $("leadPhone").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const email = $("leadEmail").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var name = $("leadName").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var phone = $("leadPhone").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var email = $("leadEmail").value.trim();</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!name){ alert("Enter your name"); return; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!phone){ alert("Enter your phone"); return; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!email || !email.includes("@")){ alert("Enter valid email"); return; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(!name){ alert("Enter your name."); return; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(!phone){ alert("Enter phone."); return; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(!email || !email.includes("@")){ alert("Enter valid email."); return; }</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>$("matchStatus").textContent = "Sending…";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Populate hidden Netlify form</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var f = $("netlifyLeadForm");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.leadName.value = name;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.leadPhone.value = phone;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.leadEmail.value = email;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.category.value = r.category;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.serviceType.value = r.subtype;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.zip.value = r.zip;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.size.value = r.size;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.cleanBedrooms.value = r.cleanBedrooms;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.cleanScope.value = r.cleanScope;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.notes.value = r.notes;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.estimateLow.value = Math.round(r.low);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>f.estimateHigh.value = Math.round(r.high);</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const payload = {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"form-name": "lead",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>leadName: name,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>leadPhone: phone,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>leadEmail: email,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>county: r.county,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>zip: r.zip,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>category: r.cat,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>serviceType: r.subtype,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cleanBedrooms: r.bedrooms || "",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cleanScope: r.scope || "",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>size: r.size || "",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>estimateLow: Math.round(r.low),</p>
-<p class="p1"><span class="Apple-converted-space">      </span>estimateHigh: Math.round(r.high)</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("matchStatus").textContent = "Sending...";</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Submit to Netlify (fails if not hosted)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Submit</p>
 <p class="p1"><span class="Apple-converted-space">    </span>fetch("/", {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>method: "POST",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>headers: { "Content-Type": "application/x-www-form-urlencoded" },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>body: encodeForm(payload)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>method:"POST",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>body:new FormData(f)</p>
 <p class="p1"><span class="Apple-converted-space">    </span>})</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.then(res =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(res.ok){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>$("matchStatus").textContent = "Submitted! A provider will contact you soon.";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>throw new Error("Netlify form failed");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>})</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.catch(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>// fallback email</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const body =</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"New Lead\n" +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Name: " + name + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Phone: " + phone + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Email: " + email + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Category: " + r.cat + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Service: " + r.subtype + "\n" +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Estimate: " + money(r.low) + " – " + money(r.high) + "\n";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.then(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("matchStatus").textContent = "Submitted! A provider will contact you.";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>})</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.catch(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("matchStatus").textContent = "Error sending. Sending fallback email...";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.location.href =</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"mailto:" + ADMIN_EMAIL +</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"?subject=Lead Request" +</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"&amp;body=" + encodeURIComponent(JSON.stringify(r, null, 2));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.location.href =</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"mailto:" + ADMIN_EMAIL +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"?subject=" + encodeURIComponent("Lead Request") +</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"&amp;body=" + encodeURIComponent(body);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>$("matchStatus").textContent =</p>
-<p class="p1"><span class="Apple-converted-space">        </span>"Submitted via email (fallback).";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>PROVIDER SIGNUP</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("providerApplyBtn").addEventListener("click", () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const name = $("pname").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const company = $("pcompany").value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const email = $("pemail").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// PROVIDER APPLY</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("providerApplyBtn").onclick = function(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var name = $("pname").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var company = $("pcompany").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var email = $("pemail").value.trim();</p>
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>if(!name || !email){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>alert("Name + Email required");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>alert("Name and email required.");</p>
 <p class="p1"><span class="Apple-converted-space">      </span>return;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>}</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const body =</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var body =</p>
 <p class="p1"><span class="Apple-converted-space">      </span>"Provider Application\n" +</p>
 <p class="p1"><span class="Apple-converted-space">      </span>"Name: " + name + "\n" +</p>
 <p class="p1"><span class="Apple-converted-space">      </span>"Company: " + company + "\n" +</p>
@@ -865,41 +794,54 @@
 <p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>window.location.href =</p>
 <p class="p1"><span class="Apple-converted-space">      </span>"mailto:" + ADMIN_EMAIL +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"?subject=" + encodeURIComponent("Provider Application") +</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"?subject=Provider Application" +</p>
 <p class="p1"><span class="Apple-converted-space">      </span>"&amp;body=" + encodeURIComponent(body);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>EMAIL ADMIN LINK</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("contactLink").addEventListener("click", e =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// CONTACT → EMAIL US</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("contactLink").onclick = function(e){</p>
 <p class="p1"><span class="Apple-converted-space">    </span>e.preventDefault();</p>
 <p class="p1"><span class="Apple-converted-space">    </span>window.location.href =</p>
 <p class="p1"><span class="Apple-converted-space">      </span>"mailto:" + ADMIN_EMAIL +</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"?subject=PriceFirstNow Inquiry";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"?subject=General Inquiry";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("setEmailLink").addEventListener("click", e =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// ADMIN EMAIL CHANGE</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("setEmailLink").onclick = function(e){</p>
 <p class="p1"><span class="Apple-converted-space">    </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const next = prompt("Enter admin email:", ADMIN_EMAIL);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(next){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>ADMIN_EMAIL = next.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>localStorage.setItem("PFN_ADMIN_EMAIL", ADMIN_EMAIL);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>$("adminEmailText").textContent = ADMIN_EMAIL;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var next = prompt("Enter admin email:", ADMIN_EMAIL);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(!next) return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ADMIN_EMAIL = next.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>localStorage.setItem("PFN_ADMIN_EMAIL", ADMIN_EMAIL);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("adminEmailText").textContent = ADMIN_EMAIL;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// SCROLL BUTTONS</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("scrollQuoteBtn").onclick = function(){ location.hash = "#quote"; };</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("scrollProviderBtn").onclick = function(){ location.hash = "#providers"; };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// INIT</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// -------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("adminEmailText").textContent = ADMIN_EMAIL;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>$("year").textContent = new Date().getFullYear();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Tab listeners</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll(".tab").forEach(function(btn){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.onclick = function(){ setCategory(btn.dataset.svc); };</p>
 <p class="p1"><span class="Apple-converted-space">  </span>});</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("adminEmailText").textContent = ADMIN_EMAIL;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* ===========================================</p>
-<p class="p1"><span class="Apple-converted-space">     </span>INITIALIZE</p>
-<p class="p1"><span class="Apple-converted-space">  </span>============================================*/</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>$("year").textContent = new Date().getFullYear();</p>
 <p class="p1"><span class="Apple-converted-space">  </span>setCategory("cleaning");</p>
-<p class="p2"><br></p>
 <p class="p1">})();</p>
 <p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
