@@ -177,14 +177,14 @@
       nav{justify-content:center}
       header{flex-direction:column;align-items:flex-start}
     }
-
-    .buildTag{font-weight:900;margin-top:10px;min-height:0}
-    .buildTag:empty{display:none}
     @media (max-width:560px){
       h1{font-size:36px;line-height:1.08}
       .ctaRow{flex-direction:column}
       .grid3{grid-template-columns:1fr}
     }
+  
+    .microNote{margin-top:10px;font-size:12px;opacity:.85;line-height:1.35}
+
   </style>
 </head>
 <body>
@@ -212,7 +212,11 @@
         <button class="btn primary" type="button" id="scrollQuoteBtn">Get Instant Quote</button>
         <button class="btn ghost" type="button" id="scrollProviderBtn">Become a Provider</button>
       </div>
-      <div class="muted buildTag" id="buildTag"></div>
+
+      <div class="ctaRow" style="margin-bottom:12px">
+</div>
+
+      <div class="muted" style="font-weight:900;margin-top:10px" id="buildTag"></div>
 
       <div class="badges">
         <div class="badge">60-second estimate</div>
@@ -220,7 +224,7 @@
         <div class="badge">Local matching</div>
         <div class="badge">No bank info</div>
       </div>
-      <p class="muted" style="margin:10px 0 0 0">No bank info needed - get a range first, then decide.</p>
+      <div class="microNote">No account needed. Just quick ranges to help you plan.</div>
     </section>
 
     <section class="card heroRight" id="quote">
@@ -254,19 +258,18 @@
           <select id="service"></select>
         </div>
 
-        
-        <div id="roomsWrap" class="hidden">
+        <div id="roomsWrap" style="display:none">
           <label for="rooms">Rooms</label>
           <select id="rooms">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="4+">4+</option>
           </select>
         </div>
 
-<div class="row2">
+        <div class="row2">
           <div>
             <label for="stories">Stories / access</label>
             <select id="stories">
@@ -448,8 +451,7 @@
   <input type="text" name="zip" />
   <input type="text" name="category" />
   <input type="text" name="serviceType" />
-    <input type="text" name="rooms" />
-<input type="text" name="stories" />
+  <input type="text" name="stories" />
   <input type="text" name="prep" />
   <input type="text" name="size" />
   <input type="text" name="paintingScope" />
@@ -633,15 +635,17 @@
       }
     }
 
-    var roomsWrap = $("roomsWrap");
-    if(roomsWrap) roomsWrap.classList.toggle("hidden", activeCategory !== "cleaning");
-
-
     refreshPetOptions();
   }
 
   function setCategory(cat){
     activeCategory = cat;
+    // Rooms selector: only for Cleaning
+    var roomsWrap = $("roomsWrap");
+    if(roomsWrap){
+      roomsWrap.style.display = (activeCategory === "cleaning") ? "block" : "none";
+    }
+
 
     var tabs = document.querySelectorAll(".tab");
     for(var i=0;i<tabs.length;i++){
@@ -682,7 +686,6 @@
     var prep = $("prep").value;
     var needWhen = $("needWhen").value;
     var serviceLevel = $("serviceLevel").value;
-    var rooms = $("rooms") ? $("rooms").value : "1";
     var paintingScope = $("paintingScope").value;
     var flooringMaterial = $("flooringMaterial").value;
     var notes = $("notes").value.trim();
@@ -702,6 +705,17 @@
         alert("Enter a realistic size.");
         return null;
       }
+    }
+
+
+    // Rooms multiplier (Cleaning only)
+    if(activeCategory === "cleaning"){
+      var rv = $("rooms") ? $("rooms").value : "2";
+      var rm = (rv === "1") ? 0.75 :
+               (rv === "2") ? 1.00 :
+               (rv === "3") ? 1.22 :
+               (rv === "4") ? 1.40 : 1.60; // 4+
+      size = size * rm;
     }
 
     var low, high;
@@ -731,13 +745,6 @@
     } else {
       low = size * 1.5;
       high = size * 3.5;
-
-      if(activeCategory === "cleaning"){
-        var rm = String(rooms || "1");
-        var roomMult = (rm === "1") ? 1.00 : (rm === "2" ? 1.15 : (rm === "3" ? 1.30 : (rm === "4" ? 1.45 : 1.65)));
-        low *= roomMult;
-        high *= roomMult;
-      }
     }
 
     var svcMult = { cleaning: 1.0, pet: 1.0, remodel: 1.25, plumbing: 1.15, hvac: 1.4 };
@@ -796,7 +803,6 @@
       prep: prep,
       needWhen: needWhen,
       serviceLevel: serviceLevel,
-      rooms: rooms,
       paintingScope: isPaintingSubtype() ? paintingScope : "",
       flooringMaterial: isFlooringSubtype() ? flooringMaterial : "",
       petOption: activeCategory === "pet" ? $("petOption").value : "",
@@ -988,17 +994,7 @@
   });
 
   safeAdd($("providerApplyBtn"), "click", providerApply);
-
-  // Download current page as HTML file
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = url;
-    a.download = "index.html";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
+});
 
   // Init
   refreshMailLinks();
@@ -1009,7 +1005,17 @@
   safeAdd($("setEmailLink"), "click", function(e){ e.preventDefault(); setAdminEmail(); });
   $("year").innerText = String(new Date().getFullYear());
 
-  // Populate services on load
+
+  // Hide build tag if empty to avoid gaps
+  (function(){
+    var bt = $("buildTag");
+    if(bt && !String(bt.textContent||"").trim()){
+      bt.style.display = "none";
+    }
+  })();
+
+
+    // Populate services on load
   setCategory("cleaning");
 
   // Tests
